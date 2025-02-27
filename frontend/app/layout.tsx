@@ -1,54 +1,39 @@
-import "@/styles/globals.css"
-import { Metadata } from "next"
+"use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import "./globals.css";
+import { Inter } from "next/font/google";
+import { MainLayout } from "@/components/layouts/MainLayout";
+import { ThirdwebProvider } from "thirdweb/react";
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Toaster } from "@/components/ui/toaster";
 
-import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
-import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-inter",
+});
 
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
-}
 
-interface RootLayoutProps {
-  children: React.ReactNode
-}
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
 
-export default function RootLayout({ children }: RootLayoutProps) {
+  const queryClient = new QueryClient();
+
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
-        >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
-            </div>
-            <TailwindIndicator />
-          </ThemeProvider>
-        </body>
-      </html>
-    </>
-  )
+    <html lang="en" className={`${inter.variable} font-sans`}>
+      <body
+        className={`${inter.className} bg-dark-navy min-h-screen antialiased`}
+      >
+        <QueryClientProvider client={queryClient}>
+          <ThirdwebProvider>
+            <MainLayout>{children}</MainLayout>
+            <Toaster />
+          </ThirdwebProvider>
+        </QueryClientProvider>
+      </body>
+    </html>
+  );
 }
