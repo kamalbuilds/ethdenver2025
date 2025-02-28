@@ -1,6 +1,6 @@
 ## 🤖 Ava the MultiChain Autonomous DeFai Portfolio Managing AI Agent
 
-> Group of Multiple specialized autonomous AI agents with powerful tools that work together in collaberation to analyze, recommend, and execute the most optimal DeFi strategies while maintaining user-defined risk parameters and portfolio goals currently live on Sui , Avalanche , Mode , Arbitrium , Sei, powered by Brian AI and LangChain.
+> Group of Multiple specialized autonomous AI agents with powerful tools that work together in collaberation to analyze, recommend, and execute the most optimal DeFi strategies while maintaining user-defined risk parameters and portfolio goals currently live on Hedera , Flow , Sui , Base Avalanche , Mode , Arbitrium , powered by Brian AI and LangChain.
 
 ## 🎯 Problem Statement
 Managing DeFi portfolios across multiple protocols across different chains can be complex and time-consuming.
@@ -24,3 +24,22 @@ An autonomous group of AI agents that manages your Multichain DeFi portfolio by:
 ## 🏗 Architecture
 
 <img width="1076" alt="Screenshot 2025-02-13 at 12 12 49 PM" src="https://github.com/user-attachments/assets/246b947c-bbee-4134-bbcb-6a33e38a7230" />
+
+## Code Implementation
+
+### Hedera Agent 
+
+
+###  Story Protocol (IP Licensing )
+
+- Made an atcp-ip based plugin for any agent to mint the IP on the story protocol and utilise the 
+
+-> https://github.com/kamalbuilds/ethdenver2025/blob/master/server/src/agents/plugins/atcp-ip/index.ts
+
+### Eigenlayer AVS for Verification of the Agentic Responses
+
+- 
+
+### Flow Agent 
+
+### 
